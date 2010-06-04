@@ -1,0 +1,39 @@
+		<script type="text/javascript" src="swfobject.js"></script>
+		<script type="text/javascript">
+			var flashvars = {};
+			flashvars.temp = <%=@g.to_json%>;
+			var params = {};
+			var attributes = {};
+			swfobject.embedSWF("/swfs/Record.swf", "myContent", "800", "604", "9.0.0", false, flashvars, params, attributes);
+		</script>
+
+<script type="text/javascript">
+	function changeSubmitBtn(_visible)
+	{
+		var e1 = document.getElementById('btnSubmit');
+		e1.style.visibility = _visible;
+		if (_visible == "visible")
+		{
+		}
+	}
+</script>
+
+	<center>
+	
+		<div id="myContent">
+			<a href="http://www.adobe.com/go/getflashplayer">
+				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+			</a>
+		</div>
+	</body>
+
+
+<li>
+<%= button_to "Submit", {:controller => 'contents', :action => "save"}, {:id => "btnSubmit", :class => "btn"}  %>
+</li>
+
+<li>
+<%= button_to "Back", contents_path, :class => "btn"  %>
+</li>
+
+</center>

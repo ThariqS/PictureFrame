@@ -1,0 +1,25 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Dir:</b>
+  <%=h @user.dir %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @user.image_url %>
+</p>
+
+<p>
+<% (@user.contents).each do |content| %>
+  <tr>
+    <td><%=h content.url %></td>
+  </tr>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

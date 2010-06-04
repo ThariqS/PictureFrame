@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @friend.name %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%=h @friend.hashed_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%=h @friend.salt %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @friend.image_url %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @friend.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>

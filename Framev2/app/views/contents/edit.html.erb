@@ -1,0 +1,24 @@
+<h1>Editing content</h1>
+
+<% form_for(@content) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :watched %><br />
+    <%= f.check_box :watched %>
+  </p>
+  <p>
+    <%= f.label :thumbnail_url %><br />
+    <%= f.text_field :thumbnail_url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @content %> |
+<%= link_to 'Back', contents_path %>

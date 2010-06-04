@@ -1,0 +1,18 @@
+<p>
+  <b>Url:</b>
+  <%=h @content.url %>
+</p>
+
+<p>
+  <b>Watched:</b>
+  <%=h @content.watched %>
+</p>
+
+<p>
+  <b>Thumbnail url:</b>
+  <%=h @content.thumbnail_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
