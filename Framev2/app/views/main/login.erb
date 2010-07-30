@@ -1,0 +1,31 @@
+<fb:header>My great application</fb:header>
+
+<p>
+Welcome to
+  your first app.
+</p>
+
+<p style="color: green"><%= flash[:notice] %></p>
+<div class="depot-form">
+  <fieldset>
+    <legend>Please Log In</legend>
+  <% facebook_form_for(:task,@task,:url => url_for(:action => :create_task), :labelwidth => '75', :width => '500') do %>
+    <% form_tag do %>
+      <p>
+        <label for="email">Email:</label>
+        <%= text_field_tag :email, params[:email] %>
+      </p>
+
+      <p>
+        <label for="password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </p>
+  
+      <p>
+        <%= submit_tag "Login" %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
+
+<%= button_to "Register", {:controller => 'main', :action => "add_user"}, {:id => "btnSubmit", :class => "btn"}  %>

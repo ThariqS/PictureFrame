@@ -1,21 +1,39 @@
-		<script type="text/javascript" src="swfobject.js"></script>
-		<script type="text/javascript">
-			var flashvars = {};
-			flashvars.temp = <%=@g.to_json%>;
-			var params = {};
-			var attributes = {};
-			swfobject.embedSWF("/swfs/Record.swf", "myContent", "800", "604", "9.0.0", false, flashvars, params, attributes);
-		</script>
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var flashvars = {};
+	flashvars.temp = <%=(@content.url).to_json%>;
+	var params = {};
+	var attributes = {};
+	swfobject.embedSWF("/swfs/Record.swf", "myContent", "640", "592", "9.0.0", false, flashvars, params, attributes);
+</script>
 
 <script type="text/javascript">
 	function changeSubmitBtn(_visible)
 	{
-		var e1 = document.getElementById('btnSubmit');
-		e1.style.visibility = _visible;
-		if (_visible == "visible")
-		{
-		}
 	}
+	
+	function submitVideo() {
+		var AUTH_TOKEN = <%=form_authenticity_token.inspect%>;
+	   	var method =  "post"; 
+	    var path = "/contents/save";
+	  //  path = <%= @path.to_json%>;
+	    // The rest of this code assumes you are not using a library.
+	    // It can be made less wordy if you use one.
+	    var form = document.createElement("form");
+	    form.setAttribute("method", method);
+	    form.setAttribute("action", path);
+	    
+	    var hiddenField = document.createElement("input");
+	    hiddenField.setAttribute("type", "hidden");
+	    hiddenField.setAttribute("name", "authenticity_token");
+		hiddenField.setAttribute("value", AUTH_TOKEN);
+	 	form.appendChild(hiddenField);
+
+	    document.body.appendChild(form);    // Not entirely sure if this is necessary
+	    form.submit();
+	}
+
+	
 </script>
 
 	<center>
@@ -28,12 +46,5 @@
 	</body>
 
 
-<li>
-<%= button_to "Submit", {:controller => 'contents', :action => "save"}, {:id => "btnSubmit", :class => "btn"}  %>
-</li>
-
-<li>
-<%= button_to "Back", contents_path, :class => "btn"  %>
-</li>
 
 </center>

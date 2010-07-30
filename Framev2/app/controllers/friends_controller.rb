@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
   # GET /friends/new.xml
   def new
     @friend = Friend.new
-
+    flash[:user_id ]= params[:id];
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @friend }
@@ -41,7 +41,11 @@ class FriendsController < ApplicationController
   # POST /friends.xml
   def create
     @friend = Friend.new(params[:friend])
-
+	@friend.user_id = flash[:user_id]
+    @friend.image_url = "http://128.100.195.55:3000/content/friendphoto2.jpg";
+    @user = User.find(@friend.user_id);
+    @user.friends << @friend;
+    
     respond_to do |format|
       if @friend.save
         flash[:notice] = 'Friend was successfully created.'
@@ -82,4 +86,14 @@ class FriendsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+     before_filter :authorize
+	
+	protected
+		def authorize
+			unless Friend.find_by_id(session[:friend_id])
+			redirect_to :controller => 'main', :action => 'login'
+		end
+	end
+
 end

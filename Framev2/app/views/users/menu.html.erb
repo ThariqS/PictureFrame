@@ -1,59 +1,60 @@
 
 
 <div id= "titlebar">
-<titletext>Welcome back, First Name</titletext>
-<li><a class ="titleLink" href="#about">Logout</a></li>
+	<titletext>Welcome back, <%=h @friend.name %></titletext>
+	<li>
+		<%= link_to "Logout", {:controller => 'main', :action => "logout"}, {:class => "titleLink" } %>
+	</li>
 </div>
 
 </br>
 
 <p style="color: green"><%= flash[:notice] %></p>
+</br>
 
 <div id="personDisplay">
-<center>
-<img src=<%=h @user.image_url %> alt="<NAME OF PERSON HERE>" />
-<br>
-<%=h @user.name %>
-</center>
+	<center>
+		<%= image_tag @user.photo.url(:thumb) %>
+		<br>
+		<br>
+		</br>
+		<%=h @user.name %>
+	</center>
 </div>
+
+
 
 <div id="recentviewed">
-<p><headertext><white>Files recently viewed by <%=h @user.name %> </br></white></headertext></p>
-<% @user.contents.each do |content| %>
-  <tr>
-  <td>
-    <%=h content.url %>
-    </br>
-    <img src=<%=h content.thumbnail_url %> />
-	</td>
-  </tr>
-<% end %>
+	<p>Files recently viewed by <%=h @user.name %> </br></p>
+	<div id="pics">
+		<%=render(:partial => "content_view", :object => @contents)%>
+	</div>
+</div>
 
 
-<br>
 <div id="buttonbar">
-<headertext><white>Add more now:</white></headertext>
-
-<tr>
-<td>
-<%= button_to "Record New", {:controller => 'contents', :action => "new", :id => @user }, {:id => "btnContent", :class => "btn" } %>
-</td>
-<td>
-<%= button_to "Upload File", {:controller => 'contents', :action => "new", :id => @user }, {:id => "btnFile", :class => "btn" } %>
-</td>
-<td>
-<%= button_to "Import from Facebook", {:controller => 'contents', :action => "new", :id => @user }, {:id => "btnFacebook", :class => "btn" } %>
-</td>
-</tr>
-
+Add more now:
+<div id="buttons">
+		<%= button_to "Record Video", {:controller => 'contents', :action => "new", :id => @user }, {:id => "btnContent", :class => "btn" } %>
+		<%= button_to "Upload Photo", {:controller => 'contents', :action => "upload", :id => @user }, {:id => "btnFile", :class => "btn" } %>
+		<%= button_to "Upload Video", {:controller => 'contents', :action => "uploadvid", :id => @user }, {:id => "btnFacebook", :class => "btn" } %>		
 </div>
 </div>
-
 
 <div id="otherpeople">
 Other people keeping in touch with <%=h @user.name %>.
-<img src="http://t1.gstatic.com/images?q=tbn:2XRp19aQUDU3BM:http://www.vaughan.org/bios/wtk/HobbyHorseRider/images/big/lilburn.jpg" alt="<NAME OF PERSON HERE>" />
-<br>
+</br>
+	<li>
+		<% @user.friends.each do |friend| %>
+		  <tr>
+		  	<td>
+		 	 	<img class = "image" src= <%=friend.image_url%> alt= <%=friend.name%> />
+		 	 	<br>
+		 	 	<%=friend.name%>
+			</td>
+		  </tr>
+		<% end %>
+	</li>
 </div>
 
 

@@ -9,32 +9,54 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100521152513) do
+ActiveRecord::Schema.define(:version => 12) do
 
-  create_table "contents", :force => true do |t|
-    t.integer  "user_id",       :null => false
-    t.integer  "friend_id",     :null => false
-    t.string   "url",           :null => false
-    t.boolean  "watched",       :null => false
-    t.string   "thumbnail_url", :null => false
+  create_table "clicks", :force => true do |t|
+    t.integer  "timeclicked"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "contents", :force => true do |t|
+    t.integer  "user_id",            :null => false
+    t.integer  "friend_id",          :null => false
+    t.string   "url",                :null => false
+    t.boolean  "watched",            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.string   "media"
+    t.string   "vid_file_name"
+    t.string   "vid_content_type"
+    t.integer  "vid_file_size"
   end
 
   create_table "friends", :force => true do |t|
-    t.integer  "user_id",    :null => false
+    t.integer  "user_id",         :null => false
     t.string   "name"
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.string   "image_url"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "gender"
+    t.string   "relationship"
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "dir"
-    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.string   "profilepic_file_name"
+    t.string   "profilepic_content_type"
+    t.integer  "profilepic_file_size"
   end
 
 end

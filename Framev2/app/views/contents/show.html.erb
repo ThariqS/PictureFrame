@@ -8,11 +8,11 @@
   <%=h @content.watched %>
 </p>
 
-<p>
-  <b>Thumbnail url:</b>
-  <%=h @content.thumbnail_url %>
-</p>
 
+<%= image_tag @content.photo.url(:thumb) %>
+<%= image_tag @content.photo.url(:small) %>
+<%= image_tag @content.photo.url(:large) %>
+<%= @content.vid.path %>
 
 <%= link_to 'Edit', edit_content_path(@content) %> |
 <%= link_to 'Back', contents_path %>

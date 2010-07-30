@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<update xmlns="http://ns.adobe.com/air/framework/update/description/1.0">
+<version>0.95</version>
+<url>http://128.100.195.55:3000/AIR/PictureFrame-v095.air</url>
+<description><![CDATA[
+0.95
+* These notes are displayed to the user in the update dialog
+* Typically, this is used to summarize what's new in the release
+]]></description>
+</update>

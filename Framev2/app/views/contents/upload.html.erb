@@ -1,0 +1,17 @@
+<h1>Upload content</h1>
+
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<% form_for :content, :html => { :multipart => true }  do |f| %>
+
+   <p>
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+

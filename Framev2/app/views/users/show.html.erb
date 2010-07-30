@@ -3,15 +3,8 @@
   <%=h @user.name %>
 </p>
 
-<p>
-  <b>Dir:</b>
-  <%=h @user.dir %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%=h @user.image_url %>
-</p>
+<%= image_tag @user.photo.url(:thumb) %>
+<%= image_tag @user.profilepic.url(:thumb) %>
 
 <p>
 <% (@user.contents).each do |content| %>

@@ -1,0 +1,30 @@
+<p style="color: green"><%= flash[:notice] %></p>
+<div class="depot-form">
+  <fieldset>
+    <legend>Please Log In</legend>
+
+    <% form_tag do %>
+      <p>
+        <label for="name">Email:</label>
+        <%= text_field_tag :email, params[:email] %>
+      </p>
+
+      <p>
+        <label for="password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </p>
+  
+      <p>
+        <%= submit_tag "Login" %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
+
+<p>
+Dont have an account? Families In Touch is currently a in a closed BETA test. Click <%= link_to "here", {:controller => 'main', :action => "about"} %> to learn more about our project. 
+</p>
+
+<p>
+If you've already signed up, activate your account by clicking on the link we sent you in the email.
+</p>

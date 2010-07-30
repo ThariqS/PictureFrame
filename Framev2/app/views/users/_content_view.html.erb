@@ -1,0 +1,27 @@
+
+<%hidden_div_if(session[:content_index] < 3, id=>"nextdiv") do%>
+	<%form_remote_tag:url=>{:action=>'next_pic',:id=> params[:id], :dir => "-1" }do%>
+		<%=submit_tag "<", :class => "btn", :id => "btnLeft" %>
+	<%end%>
+<%end%>
+
+
+
+<tr>
+<% @contents.each do |content_view| %>
+	<td>
+	<div class = "pic">
+	    <img width = "128" height = "96" src=<%=h content_view.thumb_url %> />
+	    <br>
+		Viewed: <%=content_view.watched%>
+		<br>
+	</div>
+	</td>
+<% end %>
+</tr>
+
+<%hidden_div_if(session[:content_index] > @contents.length, id=>"nextdiv") do%>
+	<%form_remote_tag:url=>	{:action=>'next_pic',:id=> params[:id], :dir => "1" }do%>
+		<%=submit_tag ">", :class => "btn", :id => "btnRight"  %>
+	<%end%>
+<%end%>

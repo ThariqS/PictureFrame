@@ -11,7 +11,7 @@
   <tr>
     <td><%=h content.url %></td>
     <td><%=h content.watched %></td>
-    <td><%=h content.thumbnail_url %></td>
+    <td><%=h content.type %></td>
     <td><%= link_to 'Show', content %></td>
     <td><%= link_to 'Edit', edit_content_path(content) %></td>
     <td><%= link_to 'Destroy', content, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,3 +22,4 @@
 <br />
 
 <%= link_to 'New content', new_content_path %>
+<%= link_to "Upload Picture", {:controller => 'contents', :action => "upload", :id => "1"}, {:class => "titleLink" } %>

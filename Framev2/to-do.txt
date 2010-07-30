@@ -1,0 +1,5 @@
+- add admin column to friends database? Change name of friends database?
+- check that the app works on Macs!!!
+- make pictures load from the website instead of having a default one
+- make email actually work
+- rigorously test!
