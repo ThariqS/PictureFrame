@@ -1,0 +1,24 @@
+<div id = "btnLeftDiv" >
+	<%form_remote_tag:url=>{:action=>'next_pic',:id=> params[:id], :dir => "-1" }do%>
+		<%=submit_tag "<", :class => leftBtnClass(session[:content_index]) , :id => "btnLeft" %>
+	<%end%>
+</div>
+
+
+
+<% @contents.each do |content_view| %>
+	<div class = "archive">
+		<center>
+		    <img class = "contentImg" width = "128" height = "96" src=<%=h content_view.thumb_url %> />
+		    <br>
+		    <br>
+			Viewed: <%= content_view.watched? ? 'yes' : 'no' %>
+		</center>
+	</div>
+<% end %>
+
+<div id = "btnRightDiv" >
+	<%form_remote_tag:url=>	{:action=>'next_pic',:id=> params[:id], :dir => "1" }do%>
+		<%=submit_tag ">", :class => rightBtnClass(session[:content_index],@contents.length), :id => "btnRight"  %>
+	<%end%>
+</div>

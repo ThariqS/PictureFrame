@@ -1,0 +1,82 @@
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/account.css" />
+ 
+<div id="head">
+		<img src="/CSSimages/logo copy.jpg" width="227" height="46" alt="families in touch">	
+		
+		<div id="family">	
+		    <ol id="imageButtons">
+		    	<li	class="icon">
+		    		<img src="/CSSimages/home beige.jpg" width="35" height="32" alt="My Account" />
+		    	</li>		
+		    	<li class="icon">
+		    		<a href="main.html"><img src="/CSSimages/search brown.jpg" width="32" height="31" alt="Find Family" /></a>
+		    	</li>
+		    	<li class="icon" id="last1">
+		    		<a href= <%=url_for(:controller => 'main', :action => "logout")%> ><img src="/CSSimages/exit brown.jpg" width="32" height="31" alt="Find Family" /></a>
+		    	</li>	
+		    </ol>
+		    <ol id="textLinks">
+		    	<li class="textL" id="on">
+		    		My Account
+		    	</li>
+		    	<li class="textL">
+		    		<a href="main.html">Find Family</a>
+		    	</li>
+		    	<li class="textL">	
+		    		Sign Out
+		    	</li>
+			</ol>
+		</div>
+</div>
+
+
+</br>
+	
+
+<div id="greet1">
+	<largetext>
+		<span class ="label">Send new message <%= flash[:notice] %> <%=h @user.name %></span>
+	</largetext>
+	<br>
+	<div id="addNew">
+
+		<%= button_to "Record Video", {:controller => 'contents', :action => "new", :id => @user }, {:id => "record", :class => "btn" } %>
+		<%= button_to "Upload Video", {:controller => 'contents', :action => "uploadvid", :id => @user }, {:id => "upload", :class => "btn" } %>			
+
+	</div>
+</div>
+
+
+<div  id="greet2">
+	<span class ="label">Recently sent messages to <%=h @user.name %></span>
+	<br>
+	<div id="pics">
+		<%=render(:partial => "content_view", :object => @contents)%>
+	</div>
+</div>		
+
+<div id="greet3" class="label">
+	Relatives also in touch with <%=h @user.name %>
+	<div id="relatives" >
+			<% @user.friends.each do |friend| %>
+			
+				<div class = "friendPic">
+					<center>
+						<img  class = "friendImg"  src=<%=h friend.image_url %> />
+					    <br>
+						<%= friend.name %>
+					</center>
+					<br>
+				</div>
+			
+			<% end %>
+	</div>
+</div>
+
+
+	
+
+	
+
+

@@ -1,30 +1,36 @@
-<p style="color: green"><%= flash[:notice] %></p>
-<div class="depot-form">
-  <fieldset>
-    <legend>Please Log In</legend>
+<link rel="stylesheet" type="text/css" href="/stylesheets/login.css" />
 
+<div id="head">
+	<img src="CSSimages/logo copy.jpg" width="227" height="46" alt="families in touch">	
+</div>
+
+<p style="color: green"><%= session[:friend_id] %></p>
+
+<div  id="frame">
+  <fieldset id="login">
+<legend class = "largetext">Please sign to send a message</legend>
     <% form_tag do %>
-      <p>
-        <label for="name">Email:</label>
-        <%= text_field_tag :email, params[:email] %>
-      </p>
+    	
+   		 <p style="color: green"><%= flash[:notice] %></p>
+    	
+        <label for="name" id="email" class="label" >E-mail Address:</label>
+        <%= text_field_tag :email, params[:email], :id =>"field1", :class =>"form"  %>
 
-      <p>
-        <label for="password">Password:</label>
-        <%= password_field_tag :password, params[:password] %>
-      </p>
+        <label for="password" id="pw" class="label">Password:</label>
+        <%= password_field_tag :password, params[:password], :id =>"field2", :class =>"form" %>
   
-      <p>
-        <%= submit_tag "Login" %>
-      </p>
+        <%= submit_tag "Login", :id => "btn" %>
     <% end %>
   </fieldset>
 </div>
 
-<p>
-Dont have an account? Families In Touch is currently a in a closed BETA test. Click <%= link_to "here", {:controller => 'main', :action => "about"} %> to learn more about our project. 
-</p>
 
-<p>
-If you've already signed up, activate your account by clicking on the link we sent you in the email.
-</p>
+<div id="footer">
+	<ol id="navlinks">
+		<li>&copy; 2010 families in touch &nbsp;&nbsp;</li>  
+		<li><a href="about.html" class="belt">About</a></li> 
+		<li><a href="contact.html" class="belt">Contact</a></li> 
+		<li><a href="terms.htm" class="belt">Terms and Conditions</a></li> 
+		<li class="last"><a href="privacy.html" class="belt">Privacy Policy</a></li>
+	</ol>	
+</div>

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def menu
     @user = User.find(params[:id])
     @friend = Friend.find(session[:friend_id])
-    @contents = @user.contents.find(:all, :offset => 0, :limit => 3)
+    @contents = @user.contents.find(:all, :offset => @user.contents.length - 3, :limit => 3)
     session[:content_index] = 0;
    #NotifyMailer.deliver_send(session[:friend_id])
 	respond_to do |format|
@@ -34,8 +34,7 @@ class UsersController < ApplicationController
 	else
 		session[:content_index] = session[:content_index] - 3
 	end
-	@index = session[:content_index]
-	@contents = @user.contents.find(:all, :offset => session[:content_index], :limit => 3)
+	@contents = @user.contents.find(:all, :offset => (@user.contents.length - session[:content_index]), :limit => 3)
 	respond_to do |format|
 		format.js
 	end

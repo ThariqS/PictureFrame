@@ -1,0 +1,60 @@
+
+
+<div id= "titlebar">
+	<titletext>Welcome back, <%=h @friend.name %></titletext>
+	<li>
+		<%= link_to "Logout", {:controller => 'main', :action => "logout"}, {:class => "titleLink" } %>
+	</li>
+</div>
+
+</br>
+
+<p style="color: green"><%= flash[:notice] %></p>
+</br>
+
+<div id="personDisplay">
+	<center>
+		<%= image_tag @user.photo.url(:thumb) %>
+		<br>
+		<br>
+		</br>
+		<%=h @user.name %>
+	</center>
+</div>
+
+
+
+<div id="recentviewed">
+	<p>Files recently viewed by <%=h @user.name %> </br></p>
+	<div id="pics">
+		<%=render(:partial => "content_view", :object => @contents)%>
+	</div>
+</div>
+
+
+<div id="buttonbar">
+Add more now:
+<div id="buttons">
+		<%= button_to "Record Video", {:controller => 'contents', :action => "new", :id => @user }, {:id => "btnContent", :class => "btn" } %>
+		<%= button_to "Upload Photo", {:controller => 'contents', :action => "upload", :id => @user }, {:id => "btnFile", :class => "btn" } %>
+		<%= button_to "Upload Video", {:controller => 'contents', :action => "uploadvid", :id => @user }, {:id => "btnFacebook", :class => "btn" } %>		
+</div>
+</div>
+
+<div id="otherpeople">
+Other people keeping in touch with <%=h @user.name %>.
+</br>
+	<li>
+		<% @user.friends.each do |friend| %>
+		  <tr>
+		  	<td>
+		 	 	<img class = "image" src= <%=friend.image_url%> alt= <%=friend.name%> />
+		 	 	<br>
+		 	 	<%=friend.name%>
+			</td>
+		  </tr>
+		<% end %>
+	</li>
+</div>
+
+

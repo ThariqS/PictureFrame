@@ -4,7 +4,7 @@
 	flashvars.temp = <%=(@content.url).to_json%>;
 	var params = {};
 	var attributes = {};
-	swfobject.embedSWF("/swfs/Record.swf", "myContent", "640", "592", "9.0.0", false, flashvars, params, attributes);
+	swfobject.embedSWF("/swfs/Record.swf", "myContent", "457", "423", "9.0.0", false, flashvars, params, attributes);
 </script>
 
 <script type="text/javascript">
@@ -16,9 +16,6 @@
 		var AUTH_TOKEN = <%=form_authenticity_token.inspect%>;
 	   	var method =  "post"; 
 	    var path = "/contents/save";
-	  //  path = <%= @path.to_json%>;
-	    // The rest of this code assumes you are not using a library.
-	    // It can be made less wordy if you use one.
 	    var form = document.createElement("form");
 	    form.setAttribute("method", method);
 	    form.setAttribute("action", path);
@@ -33,18 +30,63 @@
 	    form.submit();
 	}
 
-	
 </script>
 
-	<center>
+<link rel="stylesheet" type="text/css" href="/stylesheets/video1.css" />
+
+	<div id="head">
+		<img src="/CSSimages/logo copy.jpg" width="227" height="46" alt="families in touch">	
+    </div>
+    
+     <div id="family">	
+    	<ol id="imageButtons">
+    		<li	class="icon">
+    			<img src="/CSSimages/home beige.jpg" width="35" height="32" alt="My Account" />
+    		</li>		
+    		<li class="icon">
+    			<a href="main.html"><img src="/CSSimages/search brown.jpg" width="32" height="31" alt="Find Family" /></a>
+    		</li>
+    		<li class="icon" id="last1">
+    			<img src="/CSSimages/exit brown.jpg" width="28" height="32" alt="Sign Out" />
+    		</li>	
+    	</ol>
+    	<ol id="textLinks">
+    		<li class="textL">
+    			My Account
+    		</li>
+    		<li class="textL">
+    			<a href="main.html">Find Family</a>
+    		</li>
+    		<li class="textL">	
+    			Sign Out
+    		</li>
+		</ol>
+	</div>
+
 	
-		<div id="myContent">
-			<a href="http://www.adobe.com/go/getflashplayer">
-				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-			</a>
-		</div>
+	<div id="greet2" class="label">
+		Record Video from Webcam
+	</div>
+
+	<div id="frame">
+	<center>
+			<div id="myContent">
+				<a href="http://www.adobe.com/go/getflashplayer">
+					<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+				</a>
+			</div>
+	</center>
+	</div>
+	
 	</body>
 
+	<div id="footer">
+		<ol id="navlinks">
+			<li>&copy; 2010 families in touch &nbsp;&nbsp;</li>  
+			<li><a href="about.html" class="belt">About</a></li> 
+			<li><a href="contact.html" class="belt">Contact</a></li> 
+			<li><a href="terms.htm" class="belt">Terms and Conditions</a></li> 
+			<li class="last"><a href="privacy.html" class="belt">Privacy Policy</a></li>
+		</ol>	
+	</div>
 
-
-</center>

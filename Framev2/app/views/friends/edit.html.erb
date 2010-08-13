@@ -7,23 +7,39 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+  
   <p>
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
+    <%= f.label :password, 'Password' %><br />
+    <%= f.password_field :password, :size => 40 %>
   </p>
+  
   <p>
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
+    <%= f.label :password_confirmation, 'Confirm' %><br />
+    <%= f.password_field :password_confirmation, :size => 40 %>
   </p>
-  <p>
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </p>
+
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
   
+  <p>
+    <%= f.label :gender %><br />
+    Male
+  	<%= f.radio_button :gender, "Male" %>
+  	Female
+	<%= f.radio_button :gender, "Female" %>
+  </p>
+  
+  <p>
+    <%= f.label :relationship %><br />
+    <%= f.text_field :relationship %>
+  </p>
+  
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </p>
    <p>
     <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>

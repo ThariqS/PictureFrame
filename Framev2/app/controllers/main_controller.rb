@@ -1,16 +1,15 @@
 class MainController < ApplicationController
 	
   def index
-  	@friend = Friend.find(session[:friend_id]);
-  	if (@friend)
-  		redirect_to(:controller => 'users',:action => 'menu', :id => @friend.user_id );
+  	if (Friend.exists?(session[:friend_id]))
+  		@friend = Friend.find(session[:friend_id]);
+  		redirect_to(:action => 'menu', :id => @friend.user_id );
   	else
-  		 redirect_to(:action => "login")
+  		redirect_to(:action => "login")
   	end
   end
   
   def login
-    session[:friend_id] = nil
     if request.post?
       @friend = Friend.authenticate(params[:email], params[:password])
       if @friend
@@ -38,6 +37,37 @@ class MainController < ApplicationController
       @friend = Friend.new
     end
   end
+  
+    # GET /main/1/menu
+  def menu
+    @user = User.find(params[:id])
+    @friend = Friend.find(session[:friend_id])
+    @contents = @user.contents.find(:all, :offset => @user.contents.length - 3, :limit => 3)
+    session[:content_index] = 0;
+   #NotifyMailer.deliver_send(session[:friend_id])
+	respond_to do |format|
+      format.html # menu.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+  
+  
+  def next_pic
+	@user = User.find(params[:id])
+	@dir = params[:dir]
+	if (@dir == "1")
+		session[:content_index] = session[:content_index] + 3
+	else
+		session[:content_index] = session[:content_index] - 3
+	end
+	@contents = @user.contents.find(:all, :offset => (@user.contents.length - session[:content_index]), :limit => 3)
+	respond_to do |format|
+		format.js
+	end
+	rescue ActiveRecord::RecordNotFound
+	logger.error("Attempttoaccessinvalidproduct#{params[:id]}")
+	redirect_to_index("Invalidproduct")
+end
 
   # . . .
   
