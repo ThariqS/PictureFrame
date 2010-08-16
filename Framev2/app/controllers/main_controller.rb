@@ -40,15 +40,20 @@ class MainController < ApplicationController
   
     # GET /main/1/menu
   def menu
-    @user = User.find(params[:id])
-    @friend = Friend.find(session[:friend_id])
-     session[:content_index] = 3;
-    @contents = @user.contents.find(:all, :offset => @user.contents.length - session[:content_index], :limit => 3)
-   #NotifyMailer.deliver_send(session[:friend_id])
-	respond_to do |format|
-      format.html # menu.html.erb
-      format.xml  { render :xml => @user }
-    end
+  	if (request.post?)
+  		  redirect_to(:controller => "contents",:action => "new",:id => params[:id])
+  	else
+	    @user = User.find(params[:id])
+	    @friend = Friend.find(session[:friend_id])
+	     session[:content_index] = 3;
+	    @contents = @user.contents.find(:all, :offset => @user.contents.length - session[:content_index], :limit => 3)
+	
+		respond_to do |format|
+	      format.html # menu.html.erb
+	      format.xml  { render :xml => @user }
+	    end
+	end
+	
   end
   
   
