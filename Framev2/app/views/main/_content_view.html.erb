@@ -4,8 +4,6 @@
 	<%end%>
 </div>
 
-
-
 <% @contents.each do |content_view| %>
 	<div class = "archive">
 		<center>
@@ -19,6 +17,6 @@
 
 <div id = "btnRightDiv" >
 	<%form_remote_tag:url=>	{:action=>'next_pic',:id=> params[:id], :dir => "1" }do%>
-		<%=submit_tag ">", :class => rightBtnClass(session[:content_index],@contents.length), :id => "btnRight"  %>
+		<%=submit_tag ">", :class => rightBtnClass(session[:content_index],@user.contents.length), :id => "btnRight"  %>
 	<%end%>
 </div>

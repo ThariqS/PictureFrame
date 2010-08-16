@@ -1,0 +1,201 @@
+/*
+    Families in touch web site CSS
+    Main page
+    version of 2010-07-28
+
+*/
+
+/* ===== global styles ===== */
+
+body {
+    font-family: "Calibri", Arial, sans-serif;
+    background: #faf9da url("background.jpg") 100% 100%;
+    margin: 0;  
+    padding: 25px 15px 25px 29px; 
+	}
+	
+#head {
+	margin: 0px; 
+	border-spacing: 0;
+	padding: 0px 0px 0px 0px;
+	float: left;
+}
+
+.greet {
+	padding: 90px 20px 280px 0px;
+	font-size: 1.8em;
+	font-weight: normal;
+	color: rgb(53,34,28);
+	width: 240px;
+	float: left;
+	}
+	
+.largeText {
+	font-size: 1.4em;
+	font-weight: normal;
+	color: rgb(53,34,28);
+}
+
+#email {
+	color: rgb(65,68,0);
+	font-weight: normal; 
+	font-size: 1.6em;
+	margin: 0 0 0 0;
+	float: left;
+}
+
+.form {
+	float: left;
+	width: 235px;
+}
+
+#field1 {
+	font-family: Cambria, Times New Roman, serif;
+	font-size: 1.3em;
+	font-style: italic;
+	color: #666666;
+	width: 225px;
+	padding: 3px;
+	border: 1px solid;
+	border-color: #35221c;
+	}
+
+#pw {
+	position: relative;
+	color: rgb(65,68,0);
+	font-weight: normal; 
+	font-size: 1.6em;
+	float: left;
+}
+
+#field2 {
+	font-family: Cambria, Times New Roman, serif;
+	font-size: 1.3em;
+	font-style: italic;
+	color: #666666;
+	width: 225px;
+	padding: 3px;
+	border: 1px solid;
+	border-color: #35221c;
+}
+
+.helpMe {
+	float: left;
+	font-weight: normal;
+	font-size: .8em;
+	color: rgb(104,80,64);
+	padding: 8px 0 0 17px;
+	margin: 160px 0 25px -284px;
+	}
+
+#checkbox {
+	float: left;
+	margin: 200px 5px 0 -233px; 
+		}
+	
+#text {
+	float: left;
+	font-weight: normal;
+	font-size: .9em;
+	color: rgb(104,80,64);
+	margin: 198px 0 0 -227px;
+	padding: 0px 139px 0 14px;
+	}
+	
+#btn {
+	position:absolute;
+	left:25px;
+	bottom:50px;
+	float: left;
+	background-color: #CEE0B3;
+	font: bold;
+	font-size: 1.3em;
+	color: rgb(65,68,0);
+	border: 1px solid #cee0b3;
+}
+
+#frame {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	
+	border: 7px solid;
+	border-color: rgb(104,80,64);
+	padding: 0;
+	}
+
+#login {
+	border: 2px solid;
+	border-color: rgb(53,34,28);
+	margin: 7px;
+	padding: 25px 0px 50px 25px;
+	float: left;
+	width: 300px;
+	height: 300px;
+}
+	
+a.link {
+	color: #35221c;
+	text-decoration: none;
+	}
+
+a.visited {
+	color: 3f4b00;
+	text-decoration: none;
+	}
+
+a.hover {
+	color: 3f4b00;
+	text-decoration: none;
+	}
+	
+
+#footer {
+	
+	position: absolute;
+	bottom: 0px;
+	padding: 0;
+	color: #35221c;
+	vertical-align: bottom;
+	font-size: 0.9em;
+	border-top: 2px solid;
+	border-color: 35221c;
+	width: 100%;
+	margin-top: 60px;
+}
+
+#navlinks {
+	margin:0;
+	padding: 0.5em 3em 0.5em 0;
+	color: #35221c;
+	}
+
+#navlinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	border-right: 1px solid;
+	border-color: 35221c;
+	}
+
+#navlinks li.last {
+	border-right:0;
+	}
+	
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	
+	}
+
+#navlinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#navlinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}

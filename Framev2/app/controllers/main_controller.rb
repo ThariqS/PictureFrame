@@ -42,8 +42,8 @@ class MainController < ApplicationController
   def menu
     @user = User.find(params[:id])
     @friend = Friend.find(session[:friend_id])
-    @contents = @user.contents.find(:all, :offset => @user.contents.length - 3, :limit => 3)
-    session[:content_index] = 0;
+     session[:content_index] = 3;
+    @contents = @user.contents.find(:all, :offset => @user.contents.length - session[:content_index], :limit => 3)
    #NotifyMailer.deliver_send(session[:friend_id])
 	respond_to do |format|
       format.html # menu.html.erb
@@ -55,18 +55,17 @@ class MainController < ApplicationController
   def next_pic
 	@user = User.find(params[:id])
 	@dir = params[:dir]
-	if (@dir == "1")
+	if (@dir == "1" and session[:content_index] < @user.contents.length)
 		session[:content_index] = session[:content_index] + 3
-	else
+	end
+	else if (@dir == "-1" and session[:content_index] > 3)
 		session[:content_index] = session[:content_index] - 3
 	end
 	@contents = @user.contents.find(:all, :offset => (@user.contents.length - session[:content_index]), :limit => 3)
 	respond_to do |format|
 		format.js
 	end
-	rescue ActiveRecord::RecordNotFound
-	logger.error("Attempttoaccessinvalidproduct#{params[:id]}")
-	redirect_to_index("Invalidproduct")
+
 end
 
   # . . .

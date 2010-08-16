@@ -1,0 +1,180 @@
+/*
+    Families in touch web site CSS
+    
+    version of 2010-07-28
+
+*/
+
+/* ===== global styles ===== */
+
+body {
+    font-family: "Calibri", Arial, sans-serif;
+    background: #faf9da url("background.jpg") 100% 100%;
+    margin: 0;  
+    padding: 25px 15px 25px 29px; 
+	}
+	
+#head {
+	margin: 0px; 
+	border-spacing: 0;
+	padding: 0px 200px 0px 0px;
+	float: left;
+}
+
+#footer {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	vertical-align: bottom;
+	font-size: 0.9em;
+	border-top: 2px solid;
+	border-color: 35221c;
+	width: 1015px;
+	}
+
+#navlinks {
+	margin:0;
+	padding: 0.5em 3em 0.5em 0;
+	color: #35221c;
+	}
+
+#navlinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	border-right: 1px solid;
+	border-color: 35221c;
+	}
+
+#navlinks li.last {
+	border-right:0;
+	}
+	
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	
+	}
+
+#navlinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#navlinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+	
+	
+a.link {
+	color: #35221c;
+	text-decoration: none;
+	}
+
+a.visited {
+	color: 3f4b00;
+	text-decoration: none;
+	}
+
+a.hover {
+	color: 3f4b00;
+	text-decoration: none;
+	}
+
+.label {
+	color: 251,251,222;
+	font-weight: bold; 
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 8px 3px 20px;
+	float:left;
+	font-weight: bold; 
+	font-size: 0.9em;
+	}
+	
+
+.form {
+	color: #35221c;
+	float: left;
+	font-weight: bold; 
+	font-size: 0.9em;
+	border: 1px solid;
+	border-color: #35221c;
+	}
+
+.btn {
+	background-color: #35221c;
+	font: bold;
+	color: #faf9da;
+	border: 1px solid #35221c;
+	padding: 3px;
+	}
+
+#text {
+	float: left;
+	font-weight: normal;
+	font-size: 0.8em;
+	font-color: #35221c;
+	padding: 2px 146px 0 15px;
+	}
+
+#checkbox {
+	padding-right: 160px; 
+		}
+	
+.helpMe {
+	float: left;
+	font-weight: normal;
+	font-size: 0.7em;
+	font-color: #35221c;
+	padding: 8px 0 0 17px;
+	}
+	
+#logIn {
+	padding: 0 10px 0 10px;
+	float: left;
+	}
+
+h2 {
+	font-weight: normal;
+	color: rgb(63,75,0);
+	font-size: 1.8em;
+	padding: 150px 0 0 130px;
+	}
+	
+#bar {
+	padding: 0px;
+	border: solid;
+	border-color: rgb(104,80,64);	
+	border-width: 10px 10px 10px 10px;
+	margin: 0 0 330px 245px;
+	width: 425px;
+	border-spacing: 0;
+	}
+	
+#form1 {
+	font-family: Cambria, Times New Roman, serif;
+	font-size: 1.6em;
+	font-style: italic;
+	color: #666666;
+	border: solid #35221c;
+	border-width: 10px 5px 10px 10px; 
+	width: 300px;
+	padding: 3px;
+	float: left;
+	}
+
+#submit1 {
+	background-color: #CEE0B3;
+	font: bold;
+	font-size: 1.5em;
+	color: #3f4b00;
+	border: solid #35221c;	
+	padding: 3px;
+	border-width: 10px 10px 9px 5px;
+	margin:0;
+	}
+

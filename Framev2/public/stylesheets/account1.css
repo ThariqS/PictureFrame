@@ -1,0 +1,290 @@
+/*
+    Families in touch web site CSS
+    Main page
+    version of 2010-07-28
+
+*/
+
+/* ===== global styles ===== */
+
+body {
+    font-family: "Calibri", Arial, sans-serif;
+    background: #faf9da url("background.jpg") 100% 100%;
+    margin: 0;  
+    padding: 25px 15px 25px 29px; 
+	}
+	
+#head {
+	margin: 0px; 
+	border-spacing: 0;
+	padding: 0px 490px 0px 0px;
+	float: left;
+}
+
+#family {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	}
+
+.icon {
+	margin: 0 30px 0 30px;
+	}
+	
+img {
+	border-style: none;
+	}
+
+#imageButtons li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	}
+
+#on {
+	color: rgb(178,169,126);
+	}
+	
+#textLinks {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	font-size: 0.8em;
+	margin: -19px 0 0 43px;
+	}
+
+.textL {
+	padding: 0 10px 0 10px;
+	}
+	
+a {
+	text-decoration: none;
+	color: #35221c;
+	}
+	
+a.link {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+a.visited {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+a.hover {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+#textLinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	}
+
+#textLinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#textLinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+	
+.label {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: rgb(53,34,28);
+	border-bottom: 1px solid;
+	border-color: rgb(65,48,0);
+	width: 810px;
+	float: left;
+	}
+
+#greet1 {
+	padding: 10px 20px 4px 2px;
+	}
+
+.content {
+	margin: 12px 0 0 0;
+	}
+	
+#txt {
+	margin: -25px 0 10px 40px;
+	}
+
+#addNew {
+	margin: 3px 25px 25px 58px;
+	float: left;
+	}
+
+#success {
+	float: left;
+	margin: 30px 0 0 -800px;
+	}
+	
+#record {
+	float: left;
+	background-color: rgb(206,224,179);
+	font-size: 0.9em;
+	border: 1px solid #cee0b3;
+	padding: 3px;
+	margin: 5px 0 5px 0px;
+	padding: 6px;
+	color: rgb(63,48,0);
+	font-weight: bold;
+	}
+
+#upload {
+	float: left;
+	font-size: 0.9em;
+	border: 1px solid #cee0b3;
+	padding: 3px;
+	margin: 5px 0 5px 0px;
+	padding: 6px;
+	color: rgb(193,186,168);
+	}
+
+.button {
+	float: left;
+	}
+
+.text {
+	float: left;
+	font-size: 0.9em;
+	margin: 10px 15px 0 15px;
+	}
+	
+.form {
+	float: left;
+	margin: 40px 0px 25px -160px;
+	width: 235px;
+	}
+
+#greet2 {
+	margin: 50px 0 0 0;
+	}
+
+.archive {
+	margin: -11px 0 0 28px;
+	display: inline;
+	float: left;
+	}
+
+.image1 {
+	width: 180px;
+	height: 197px;
+	padding: 5px 5px 20px 5px;
+	background-color: rgb(178,169,126);
+	border: 1px solid rgb(63,48,0);
+	}
+
+img {
+	background-color: white;
+	}
+
+#filename {
+	color: 35221c;
+	font-weight: normal; 
+	font-size: 0.9em;
+	padding: 85px 5px 25px 4px;
+	float: left;
+	}
+	
+.file {
+	margin: -45px 0 0 5px;
+	padding: 3px;
+	}
+
+.view {
+	font-size: .8em;
+	margin: -21px 0 0 110px;
+	}
+
+#scrollButton {
+	margin: 238px 0 0 -105px;
+	float: left;
+	}
+
+#greet3 {
+	float: left;
+	margin: -353px 0 0 820px;
+	border-bottom: 0;
+	font-size: 1em;
+	width:150px;
+	}
+	
+#relatives {
+	float: left;
+	margin: -300px 0 0 820px;
+	}
+
+.others {
+	font-size: 0.9em;
+	}
+	
+.image2 {
+	width: 70px;
+	height: 66px;
+	padding: 2px 2px 2px 2px;
+	background-color: rgb(178,169,126);
+	border: 1px solid rgb(63,48,0);
+	}
+	
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	}	
+
+#footer {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	vertical-align: bottom;
+	font-size: 0.9em;
+	border-top: 2px solid;
+	border-color: 35221c;
+	width: 1015px;
+	margin-top: 180px;
+	}
+
+#navlinks {
+	margin:0;
+	padding: 0.5em 3em 0.5em 0;
+	color: #35221c;
+	}
+
+#navlinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	border-right: 1px solid;
+	border-color: 35221c;
+	}
+
+#navlinks li.last {
+	border-right:0;
+	}
+	
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	
+	}
+
+#navlinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#navlinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}

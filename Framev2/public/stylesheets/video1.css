@@ -1,0 +1,186 @@
+/*
+    Families in touch web site CSS
+    Record page
+    version of 2010-07-28
+
+*/
+
+body {
+    font-family: "Calibri", Arial, sans-serif;
+    background: #faf9da url("images/background.jpg") 100% 100%;
+    margin: 0;  
+    padding: 25px 15px 25px 29px; 
+	}
+	
+#head {
+	margin: 0px; 
+	border-spacing: 0;
+	padding: 0px 490px 0px 0px;
+	float: left;
+}
+
+#family {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	}
+
+.icon {
+	margin: 0 30px 0 30px;
+	}
+	
+img {
+	border-style: none;
+	}
+
+#imageButtons li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	}
+	
+#textLinks {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	font-size: 0.8em;
+	margin: -19px 0 0 43px;
+	}
+
+.textL {
+	padding: 0 10px 0 10px;
+	}
+	
+a {
+	text-decoration: none;
+	color: #35221c;
+	}
+	
+a.link {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+a.visited {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+a.hover {
+	color: rgb(63,75,0);
+	text-decoration: none;
+	}
+
+#textLinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	}
+
+#textLinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#textLinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+	
+.label {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: rgb(53,34,28);
+	border-bottom: 1px solid;
+	border-color: rgb(65,48,0);
+}
+
+#on {
+	color: rgb(178,169,126);
+	}
+	
+#greet2 {
+	
+	position: absolute;
+	top: 100px;
+	left: 20px;
+	float: left;
+	width: 810px;
+	}
+
+#frame {
+	width: 550px;
+	height: 480px;
+	border: 1px solid rgb(79,111,25);
+	background-color: rgb(210,214,171);
+	margin: 105px 0 0 30px;
+}
+
+#myContent{
+	
+	margin-top:30px;
+}
+	
+#flashRecorder {
+	width: 525px;
+	height: 292px;
+	border: 1px solid rgb(103,99,0);
+	background-color: rgb(210,214,171);
+	margin: 9px 0px 0 9px;
+}
+
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	}	
+
+#footer {
+	padding: 0;
+	color: #35221c;
+	float: left;
+	vertical-align: bottom;
+	font-size: 0.9em;
+	border-top: 2px solid;
+	border-color: 35221c;
+	width: 1015px;
+	margin-top: 20px;
+}
+
+#navlinks {
+	margin:0;
+	padding: 0.5em 3em 0.5em 0;
+	color: #35221c;
+	}
+
+#navlinks li {
+	display: inline;
+	margin-right: 0.5em; 
+	padding-right: 0.75em;
+	font-weight: bold;
+	border-right: 1px solid;
+	border-color: 35221c;
+	}
+
+#navlinks li.last {
+	border-right:0;
+	}
+	
+.belt {
+	text-decoration: none;
+	color: #35221c;
+	padding: 0 5px;
+	
+	}
+
+#navlinks.visited {
+	color: #3f4b00;
+	text-decoration: none;
+	}
+
+#navlinks.hover {
+	color: #3f4b00;
+	text-decoration: none;
+	}

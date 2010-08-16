@@ -1,0 +1,10 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^mail.nscientia.skule.ca$ [OR]
+RewriteCond %{HTTP_HOST} ^www.mail.nscientia.skule.ca$
+RewriteRule ^(.*)$ http://google.com/a/nscientia.com [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^mail.nscientia.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.mail.nscientia.com$
+RewriteRule ^(.*)$ http://google.com/a/nscientia.com [R=301,L]
+
