@@ -41,7 +41,7 @@ class MainController < ApplicationController
     # GET /main/1/menu
   def menu
   	if (request.post?)
-  		  redirect_to(:controller => "contents",:action => "new",:id => params[:id])
+  		  uploadvid()
   	else
 	    @user = User.find(params[:id])
 	    @friend = Friend.find(session[:friend_id])
