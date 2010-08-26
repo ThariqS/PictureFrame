@@ -1,0 +1,6 @@
+Installing Arduino Drivers on Windows 7
+
+
+- Download drivers from /drivers/arduino.zip
+- Extract to a folder
+- Go Control Panel 
