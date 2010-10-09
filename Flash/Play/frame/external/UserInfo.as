@@ -11,10 +11,10 @@
 		
 		public static const webRoot:String = "http://familiesintouch.taglab.utoronto.ca";
 		
-		public static const INTERVAL_VIDCHECK:int 	= 5000;
-		public static const INTERVAL_UPDATE:int 	= 300000; // 5 minutes
+		public static const INTERVAL_VIDCHECK:int 	= 10000;  //Check for new video every 10 seconds
+		public static const INTERVAL_UPDATE:int 	= 300000; // Check for an update very 5 minutes
 		public static const INTERVAL_MONITOR:int 	= 20000; //The internet monitor checks for a connection every 20 seconds
-		public static const INTERVAL_EMAIL:int 		= 18000000;
+		public static const INTERVAL_EMAIL:int 		= 18000000;	//The time between emails being sent
 		
 		public static const SEND_EMAILS:Boolean = true;
 		public static var SIMULATOR:Boolean = false;

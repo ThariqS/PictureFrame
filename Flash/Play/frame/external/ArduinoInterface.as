@@ -21,7 +21,7 @@
 		}
 
 
-		public function ArduinoInterface(_port:int):void
+		public function ArduinoInterface(_port:int):void  
 		{
 			port = _port;
 		}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <update xmlns="http://ns.adobe.com/air/framework/update/description/1.0">
-<version>1.00</version>
-<url>http://familiesintouch.taglab.utoronto.ca/AIR/PictureFrame-v100.air</url>
+<version>1.04</version>
+<url>http://familiesintouch.taglab.utoronto.ca/AIR/PictureFrame-v104.air</url>
 <description><![CDATA[
-0.99
+1.03
 * These notes are displayed to the user in the update dialog
 * Typically, this is used to summarize what's new in the release
 ]]></description>

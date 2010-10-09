@@ -31,6 +31,7 @@
 
 
 		private var playStatus:int = 0;
+		private var duration:int = 0;
 		
 
 		function ShowVideos(stageVideo:Video):void {

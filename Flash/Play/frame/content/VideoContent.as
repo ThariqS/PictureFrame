@@ -18,6 +18,7 @@
 		private var nsPlay:NetStream;
 		private var videoRemote:Video;
 		private var nc:NetConnection;
+		private var duration:Number;
 		
 		function VideoContent(_name:String,_id:String,_videoRemote:Video,_nc:NetConnection):void
 		{
@@ -46,18 +47,22 @@
 					if (playReady == true)
 					{
 						trace("VIDCONTENT: stopped playing");
-						doPlayStop();
+						//doPlayStop();
 					}
 				}
 			};
 			nsPlayClient.onMetaData = function(infoObject:Object):void
 			{
-				/*trace("onMetaData");
+				trace("onMetaData");
 				// print debug information about the metaData
 				for (var propName:String in infoObject)
 				{
-					trace("  "+propName + " = " + infoObject[propName]);
-				}*/
+					if (propName == "duration")
+					{
+						duration = infoObject[propName];
+						trace ("VID CONTENT: duration is "+duration);
+					}
+				}
 			};
 		}
 		
@@ -66,8 +71,9 @@
 			if (infoObject.info.code == "NetStream.Buffer.Flush" && playReady == false)
 			{
 				doneLoading();
+				nsPlay.removeEventListener(NetStatusEvent.NET_STATUS, nsPlayOnStatus);
 			}
-			else if (infoObject.info.code == "NetStream.Play.Stop" && playReady == true && infoObject.info.description != null)
+			/*else if (infoObject.info.code == "NetStream.Play.Stop" && playReady == true && infoObject.info.description != null)
 			{
 				trace("VIDCONTENT: did play stop "+infoObject.info.description);
 				nsPlay.removeEventListener(NetStatusEvent.NET_STATUS, nsPlayOnStatus);
@@ -75,6 +81,14 @@
 			}
 			else if (infoObject.info.code == "NetStream.Play.StreamNotFound" || infoObject.info.code == "NetStream.Play.Failed") {
 				trace(infoObject.info.description);
+			}*/
+		}
+		
+		private function checkDuration():void
+		{
+			if (duration - nsPlay.time <= 0.5)
+			{
+				stop();
 			}
 		}
 		
@@ -85,18 +99,24 @@
 			dispatchEvent(new Event(Event.ACTIVATE));
 		}
 		
+		private var playInterval:uint;
+		
 		public function play():void
 		{
 			videoRemote.attachNetStream(nsPlay);
 			nsPlay.resume();
 			nsPlay.seek(0);	
 			playReady = true;
+			playInterval = setInterval(checkDuration,100);
+			
 		}
 		
 		private function stop():void
 		{
+			clearInterval(playInterval);
 			sendWatchedNotice();
 			nsPlay.pause();
+			nsPlay.seek(0);	
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
 		
